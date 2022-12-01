@@ -12,19 +12,19 @@ from read import read
 create_phonebook_csv()
 
 while(True):
-    command = input('Командная строка: ')
-    if command.lower() == 'добавить':
+    command = input('Выберите действие: \n1 - добавить новый контакт \n2 - поиск контакта \n3 - завершить работу \n')
+    if command.lower() == '1':
         command = write()
         txt = 'ОК!' if command else 'ERROR!'
         log('Создание нового контакта', txt)
         print('-' * 10)
-    elif command.lower() == 'найти':
+    elif command.lower() == '2':
         command = read()
         txt = 'ОК!' if command else 'ERROR!'
         log('Поиск контактов', txt)
         print('-' * 10)
-    elif command.lower() == 'завершить':
+    elif command.lower() == '3':
         break
     else:
-        print('Такой команды нет')
+        print('Ошибка! Такой команды нет')
 
